@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for item in data%}
+                <tr>
+                    <td>{{item.stock}}</td>
+                    <td>{{item.amount}}</td>
+                    <td>{{item.price | usd}}</td>
+                    <td>{{item.date}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
